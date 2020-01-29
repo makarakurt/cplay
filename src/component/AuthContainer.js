@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import AuthView from './AuthView';
-import { DEEP_LINK_URL, CLIENT_ID, SPOTIFY_LOGIN_URL_1, SPOTIFY_LOGIN_URL_2 } from '../Constants';
-
  
 class AuthContainer extends Component {
     
@@ -9,7 +7,7 @@ class AuthContainer extends Component {
         let localStorage = window.localStorage;
         if (localStorage && localStorage.getItem('auth')) {
             let accessToken = localStorage.getItem('auth');
-            window.location.href = DEEP_LINK_URL + accessToken;
+            window.location.href = 'cplay://auth?token=' + accessToken;
         }
     }
 
@@ -25,7 +23,7 @@ class AuthContainer extends Component {
 
     onClick = () => {
         let state = this.generateRandomString(16);
-        let url = SPOTIFY_LOGIN_URL_1 + state + SPOTIFY_LOGIN_URL_2 + CLIENT_ID;
+        let url = 'https://accounts.spotify.com/tr/login?continue=https:%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Duser-read-private%2Buser-read-email%2Buser-top-read%2Buser-read-currently-playing%26response_type%3Dcode%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fcallback%26state%3D' + state + '%26client_id%3D' + '2de5eb630c1c47a685658609859ee19e';
         window.location.href = url;
     }
 

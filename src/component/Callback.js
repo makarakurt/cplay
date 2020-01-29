@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import { DEEP_LINK_URL, CLIENT_ID, CLIENT_SECRET, SPOTIFY_TOKEN_URL, REDIRECT_URL, GRANT_TYPE } from '../Constants';
 const axios = require('axios');
 const queryString = require('query-string');
 
@@ -20,13 +19,13 @@ class Callback extends Component {
 
 
     getAccessToken = () => {
-        const clientId = CLIENT_ID;
-        const clientSecret = CLIENT_SECRET;
-        const url = SPOTIFY_TOKEN_URL;
+        const clientId = '2de5eb630c1c47a685658609859ee19e';
+        const clientSecret = 'd09974ecee214be3878c8124dd79277e';
+        const url = 'https://accounts.spotify.com/api/token';
         const requestBody = {
-            redirect_uri: REDIRECT_URL,
+            redirect_uri: 'http://localhost:3000/callback',
             code: this.state.code,
-            grant_type: GRANT_TYPE
+            grant_type: 'authorization_code'
         }
 
         const config = {
@@ -40,7 +39,7 @@ class Callback extends Component {
         .then((result) => {
             let accessToken = result.data.access_token;
             localStorage.setItem('token', accessToken);
-            window.location.href = DEEP_LINK_URL + accessToken;    
+            window.location.href = 'cplay://auth?token=' + accessToken;    
         })
         .catch((err) => {})
     }
