@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import { withRouter } from "react-router-dom";
-import { injectIntl } from "react-intl";
 import AuthView from './AuthView';
 import { DEEP_LINK_URL, CLIENT_ID, SPOTIFY_LOGIN_URL_1, SPOTIFY_LOGIN_URL_2 } from '../Constants';
 
@@ -39,4 +37,4 @@ class AuthContainer extends Component {
         )
     }
 }
-export default withRouter((injectIntl(AuthContainer)));
+export default AuthContainer;

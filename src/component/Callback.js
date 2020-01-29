@@ -1,7 +1,4 @@
 import {Component} from 'react';
-import { withRouter } from "react-router-dom";
-import { injectIntl } from "react-intl";
-import history from "../history";
 import { DEEP_LINK_URL, CLIENT_ID, CLIENT_SECRET, SPOTIFY_TOKEN_URL, REDIRECT_URL, GRANT_TYPE } from '../Constants';
 const axios = require('axios');
 const queryString = require('query-string');
@@ -45,9 +42,7 @@ class Callback extends Component {
             localStorage.setItem('token', accessToken);
             window.location.href = DEEP_LINK_URL + accessToken;    
         })
-        .catch((err) => {
-            history.push('/')
-        })
+        .catch((err) => {})
     }
 
     render () {
@@ -55,4 +50,4 @@ class Callback extends Component {
     }
 }
 
-export default withRouter((injectIntl(Callback)));
+export default Callback;
