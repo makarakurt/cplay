@@ -7,14 +7,12 @@ class Callback extends Component {
         super(props)
 
         this.state = {
-            code: null,
-            state: null
+            code: null
         }
     }
 
     componentDidMount () {
-        var parsed = queryString.parse(this.props.location.search);
-        this.setState({code: parsed.code, state: parsed.state}, () => this.getAccessToken());
+        this.setState({code: this.props.code}, () => this.getAccessToken());
     }
 
 
@@ -38,7 +36,7 @@ class Callback extends Component {
         axios.post(url, queryString.stringify(requestBody), config)
         .then((result) => {
             let accessToken = result.data.access_token;
-            localStorage.setItem('token', accessToken);
+            console.log({accessToken});
             window.location.href = 'cplay://auth?token=' + accessToken;    
         })
         .catch((err) => {})

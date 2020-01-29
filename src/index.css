@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(to right, #35495E, #EEEEEE) ;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.custom-btn {
+  width: 150px;
+  background-color: #6C7B95;
+  height: 44px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+
+}

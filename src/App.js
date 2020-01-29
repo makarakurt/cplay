@@ -5,7 +5,7 @@ function App() {
   let body = null;
   let href = new URL(window.location.href);
   if (href.searchParams.get('code')) {
-    body = <Callback />;
+    body = <Callback code={href.searchParams.get('code')} />;
   } else {
     body = <AuthContainer />;
   }

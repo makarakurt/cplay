@@ -3,14 +3,6 @@ import AuthView from './AuthView';
  
 class AuthContainer extends Component {
     
-    componentDidMount() {
-        let localStorage = window.localStorage;
-        if (localStorage && localStorage.getItem('auth')) {
-            let accessToken = localStorage.getItem('auth');
-            window.location.href = 'cplay://auth?token=' + accessToken;
-        }
-    }
-
     generateRandomString = length => {
         let text = '';
         let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
