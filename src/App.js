@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AuthContainer from './component/AuthContainer';
+import Callback from './component/Callback';
+import history from "./history";
+import { Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router data-test="app" history={history}>
+          <Switch>
+            <Route exact path="/" component={AuthContainer} />
+            <Route exact path="/callback" component={Callback} />
+          </Switch>
+    </Router>
   );
 }
 
