@@ -21,7 +21,7 @@ class Callback extends Component {
         const clientSecret = 'd09974ecee214be3878c8124dd79277e';
         const url = 'https://accounts.spotify.com/api/token';
         const requestBody = {
-            redirect_uri: 'http://localhost:3000/callback',
+            redirect_uri: 'https://makarakurt.github.io/cplay',
             code: this.state.code,
             grant_type: 'authorization_code'
         }
