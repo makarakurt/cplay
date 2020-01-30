@@ -15,7 +15,7 @@ class AuthContainer extends Component {
 
     onClick = () => {
         let state = this.generateRandomString(16);
-        let url = 'https://accounts.spotify.com/tr/login?continue=https:%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Duser-read-private%2Buser-read-email%2Buser-top-read%2Buser-read-currently-playing%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fmakarakurt.github.io%252Fcplay%26state%3D' + state + '%26client_id%3D' + '2de5eb630c1c47a685658609859ee19e';
+        let url = 'https://accounts.spotify.com/tr/login?continue=https:%2F%2Faccounts.spotify.com%2Fauthorize%3Fscope%3Duser-read-private%2Buser-read-email%2Buser-top-read%2Buser-read-currently-playing%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fmakarakurt.github.io%252Fcplay%26state%3D' + state + '%26client_id%3D' + '';
         window.location.href = url;
     }
 
