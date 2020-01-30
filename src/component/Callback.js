@@ -17,11 +17,11 @@ class Callback extends Component {
 
 
     getAccessToken = () => {
-        const clientId = '2de5eb630c1c47a685658609859ee19e';
-        const clientSecret = 'd09974ecee214be3878c8124dd79277e';
+        const clientId = '';
+        const clientSecret = '';
         const url = 'https://accounts.spotify.com/api/token';
         const requestBody = {
-            redirect_uri: 'https://makarakurt.github.io/cplay',
+            redirect_uri: '',
             code: this.state.code,
             grant_type: 'authorization_code'
         }
