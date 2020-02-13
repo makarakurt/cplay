@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 const axios = require('axios');
 const queryString = require('query-string');
 
@@ -43,7 +43,17 @@ class Callback extends Component {
     }
 
     render () {
-        return null;
+        return (
+            <div className="lyric-body">
+                <div className="brand-content">
+                    <div className="brand"> KUPLE </div>
+                    <div className="brand-text"> THIS IS WHY WE LISTEN </div>
+                </div>
+                <div id="login">
+                    <h1 className="auth-text">  </h1>
+                </div>
+            </div>
+        )
     }
 }
 
